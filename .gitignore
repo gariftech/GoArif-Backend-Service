@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+# Mengabaikan folder bin
+bin/
+
+# Mengabaikan folder obj/Debug
+obj/Debug/
+
+# Mengabaikan file build dan hasil build
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+
+# Mengabaikan file sementara IDE
+*.user
+*.suo
+*.csproj.user
+
+# Mengabaikan file log
+*.log
+
+# Mengabaikan file sistem
+.DS_Store
+Thumbs.db
+
+# Mengabaikan file konfigurasi sementara
+*.tmp
+*.swp
+*.swo
+
+/bin/
+/obj/
+
+.idea
+.fake
+.vscode/launch.json

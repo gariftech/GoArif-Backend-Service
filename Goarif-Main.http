@@ -1,0 +1,6 @@
+@Goarif_Main_HostAddress = http://localhost:5087
+
+GET {{Goarif_Main_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

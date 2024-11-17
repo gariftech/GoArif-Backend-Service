@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Goarif-Main", "Goarif-Main.csproj", "{1C691F2D-5100-4D32-A5FA-9BC18FAF7E30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C691F2D-5100-4D32-A5FA-9BC18FAF7E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C691F2D-5100-4D32-A5FA-9BC18FAF7E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C691F2D-5100-4D32-A5FA-9BC18FAF7E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C691F2D-5100-4D32-A5FA-9BC18FAF7E30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10E694AC-C155-45D2-AFCC-99DD1E145D45}
+	EndGlobalSection
+EndGlobal

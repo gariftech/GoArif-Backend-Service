@@ -1,0 +1,53 @@
+[
+    {
+      "categoryName": "Education",
+      "sequence": 0,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Mental Health",
+      "sequence": 1,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Life Coach",
+      "sequence": 2,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Career",
+      "sequence": 3,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Business",
+      "sequence": 4,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Living Abroad",
+      "sequence": 5,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Fitness",
+      "sequence": 6,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Language",
+      "sequence": 7,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Entertainment",
+      "sequence": 8,
+      "attachmentId": null
+    },
+    {
+      "categoryName": "Technology",
+      "sequence": 9,
+      "attachmentId": null
+    }
+  ]
+  
