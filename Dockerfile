@@ -1,4 +1,4 @@
-# Use the official .NET 6 SDK image to build the application
+# Use the official .NET 8 SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /app
@@ -18,6 +18,9 @@ WORKDIR /app
 
 # Copy the published output from the build stage
 COPY --from=build /app/out .
+
+# Expose the application port
+EXPOSE 4000
 
 # Define the entry point for your application
 ENTRYPOINT ["dotnet", "Goarif-Main.dll"]
