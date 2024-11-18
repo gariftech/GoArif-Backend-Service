@@ -127,23 +127,23 @@ namespace Goarif.Server.Controllers
             }
         }
 
-        // [AllowAnonymous]
-        // [HttpGet]
-        // [Route("activation/{UID}")]
-        // public async Task<object> VerifySeasonsAsync([FromRoute] string UID)
-        // {
-        //     try
-        //     {
-        //         var dataList = await _IAuthService.Aktifasi(UID);
-        //         return Ok(dataList);
-        //     }
-        //     catch (CustomException ex)
-        //     {
-        //         int errorCode = ex.ErrorCode;
-        //         var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
-        //         return _errorUtility.HandleError(errorCode, errorResponse);
-        //     }
-        // }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("activation/{UID}")]
+        public async Task<object> VerifySeasonsAsync([FromRoute] string UID)
+        {
+            try
+            {
+                var dataList = await _IAuthService.Aktifasi(UID);
+                return Ok(dataList);
+            }
+            catch (CustomException ex)
+            {
+                int errorCode = ex.ErrorCode;
+                var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
+                return _errorUtility.HandleError(errorCode, errorResponse);
+            }
+        }
 
         [Authorize]
         [HttpGet]

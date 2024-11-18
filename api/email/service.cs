@@ -70,7 +70,7 @@ namespace SendingEmail
                 <div style='font-size:14px; font-family:Arial, sans-serif; color:#434343; line-height:1.5;'>
                     <p>Hello,</p>
                     <p>Thank you for registering with us! To complete your registration and activate your account, please click the link below:</p>
-                    <p><a href='https://Goarif-main-service-158474999909.asia-southeast2.run.app/api/v1/auth/activation/{id}' style='color:#1a73e8; text-decoration:none;'>Activate Your Account</a></p>
+                    <p><a href='https://app.goarif.co/api/v1/auth/activation/{id}' style='color:#1a73e8; text-decoration:none;'>Activate Your Account</a></p>
                     <p>If you did not request this activation, you can ignore this email.</p>
                     <p>Best regards,<br>Goarif Team</p>
                 </div>";
