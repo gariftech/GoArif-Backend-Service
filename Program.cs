@@ -118,6 +118,7 @@ app.UseSwaggerUI(c =>
 {
     c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blazor API V1");
+    c.RoutePrefix = "api/v1/swagger";
 });
 
 app.UseHttpsRedirection();
