@@ -16,6 +16,14 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="MongoDB.Driver" Version="3.0.0" />
+    <PackageReference Include="Deepgram" Version="4.1.0" />
+    <PackageReference Include="EPPlus" Version="7.0.3" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.16.2" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.34.0" />
+    <PackageReference Include="YoutubeExplode" Version="6.4.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
   </ItemGroup>
-
 </Project>

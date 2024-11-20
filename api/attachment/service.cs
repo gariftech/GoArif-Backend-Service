@@ -1,6 +1,6 @@
+using Goarif.Shared.Models;
 using Google.Cloud.Storage.V1;
 using MongoDB.Driver;
-using Goarif.Shared.Models;
 
 namespace RepositoryPattern.Services.AttachmentService
 {
@@ -18,11 +18,6 @@ namespace RepositoryPattern.Services.AttachmentService
             MongoClient client = new MongoClient(configuration.GetConnectionString("ConnectionURI"));
             IMongoDatabase database = client.GetDatabase("Goarif");
             AttachmentLink = database.GetCollection<Attachments>("Attachment");
-            ///
-            var credentialPath = configuration["GoogleCloud:CredentialsPath"];
-            var googleCredential = Google.Apis.Auth.OAuth2.GoogleCredential.FromFile(credentialPath);
-            storageClient = StorageClient.Create(googleCredential);
-
             this.key = configuration.GetSection("AppSettings")["JwtKey"];
         }
         public async Task<Object> Get(string Username)
@@ -39,41 +34,43 @@ namespace RepositoryPattern.Services.AttachmentService
             }
         }
 
-        public async Task<(string FileName, string Url)> Upload(IFormFile file, string fileName, string idUser)
-        {
-            var bucket = bucketName;
-            var folderName = "uploads";
+        // public async Task<(string FileName, string Url)> Upload(IFormFile file, string fileName, string idUser)
+        // {
+        //     var bucket = bucketName;
+        //     var folderName = "uploads";
+        //     var fileSize = file.Length;
 
-            // Baca file sebagai stream
-            using var memoryStream = new MemoryStream();
-            await file.CopyToAsync(memoryStream);
-            memoryStream.Position = 0;
+        //     // Baca file sebagai stream
+        //     using var memoryStream = new MemoryStream();
+        //     await file.CopyToAsync(memoryStream);
+        //     memoryStream.Position = 0;
 
-            // Tentukan metadata file
-            var contentType = file.ContentType;
+        //     // Tentukan metadata file
+        //     var contentType = file.ContentType;
 
-            // Unggah file ke Google Cloud Storage
-            var gcsFile = storageClient.UploadObject(bucket, fileName, contentType, memoryStream);
+        //     // Unggah file ke Google Cloud Storage
+        //     var gcsFile = storageClient.UploadObject(bucket, fileName, contentType, memoryStream);
 
-            // URL akses file
-            var url = $"https://storage.googleapis.com/{bucket}/{fileName}";
-            var uuid = Guid.NewGuid().ToString();
+        //     // URL akses file
+        //     var url = $"https://storage.googleapis.com/{bucket}/{fileName}";
+        //     var uuid = Guid.NewGuid().ToString();
 
-            var otp = new Attachments
-            {
-                Id = uuid,
-                fileName = fileName,
-                type = file.ContentType,
-                path = url,
-                UserId = idUser,
-                CreatedAt = DateTime.Now,
-            };
+        //     var otp = new Attachments
+        //     {
+        //         Id = uuid,
+        //         fileName = fileName,
+        //         type = file.ContentType,
+        //         path = url,
+        //         UserId = idUser,
+        //         size = fileSize,
+        //         CreatedAt = DateTime.Now,
+        //     };
 
-            // Simpan OTP ke database
-            await AttachmentLink.InsertOneAsync(otp);
+        //     // Simpan OTP ke database
+        //     await AttachmentLink.InsertOneAsync(otp);
 
-            return (gcsFile.Name, url);
-        }
+        //     return (gcsFile.Name, url);
+        // }
 
         public async Task<object> DeleteFileAsync(string fileUrl)
         {
