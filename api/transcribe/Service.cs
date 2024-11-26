@@ -6,6 +6,8 @@ using Deepgram;
 using Deepgram.Models.Listen.v1.REST;
 using Goarif.Shared.Models;
 using MongoDB.Driver;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using YoutubeExplode;
 
 namespace RepositoryPattern.Services.TranscribeService
@@ -232,7 +234,7 @@ namespace RepositoryPattern.Services.TranscribeService
             return match.Success ? match.Value : null;
         }
 
-        private async Task<string> ConvertAudioToTextAsync(byte[] audioData, string languange)
+        private async Task<object> ConvertAudioToTextAsync(byte[] audioData, string languange)
         {
             var items = await _apiSetting.Find(_ => _.Key == "DeepGram").FirstOrDefaultAsync();
             // Create Deepgram client
@@ -254,12 +256,13 @@ namespace RepositoryPattern.Services.TranscribeService
                     {
                         Punctuate = true,
                         Model = "nova-2",
-                        Language = languange
+                        Language = languange,
+                        SmartFormat = true,
+                        Paragraphs=true
                     }, cancelToken);
 
                 // Process and return the transcription result
-                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Transcript ?? "No transcription available.";
-                Console.WriteLine(response?.Results?.ToString());
+                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
                 return transcript;
             }
             catch (Exception ex)
@@ -285,7 +288,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        private async Task<string> ConvertAudioToTextAsyncWithLang(byte[] audioData, string contentType, YouTubeUrl youtubeUrl)
+        private async Task<object> ConvertAudioToTextAsyncWithLang(byte[] audioData, string contentType, YouTubeUrl youtubeUrl)
         {
             var items = await _apiSetting.Find(_ => _.Key == "DeepGram").FirstOrDefaultAsync();
             // Create Deepgram client
@@ -307,12 +310,13 @@ namespace RepositoryPattern.Services.TranscribeService
                     {
                         Punctuate = true,
                         Model = "nova-2",
-                        Language = youtubeUrl.Languange
+                        Language = youtubeUrl.Languange,
+                        SmartFormat = true,
+                        Paragraphs=true
                     }, cancelToken);
 
                 // Process and return the transcription result
-                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Transcript ?? "No transcription available.";
-                Console.WriteLine(response?.Results?.ToString());
+                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
                 return transcript;
             }
             catch (Exception ex)

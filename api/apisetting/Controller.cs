@@ -7,7 +7,7 @@ namespace Goarif.Server.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("/[controller]")]
+    [Route("/api/v1")]
     public class ApiSettingController : ControllerBase
     {
         private readonly IApiSettingService _IApiSettingService;

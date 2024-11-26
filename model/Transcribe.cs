@@ -20,8 +20,7 @@ namespace Goarif.Shared.Models
         public int? Id { get; set; }
         public string FileName { get; set; }
         public string ContentType { get; set; }
-        public string Result { get; set; }
-
+        public object Result { get; set; }
         public byte[] Data { get; set; }
 
     }

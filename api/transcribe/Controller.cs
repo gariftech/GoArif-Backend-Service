@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Goarif.Server.Controllers
 {
     [ApiController]
-    [Route("/[controller]")]
+    [Route("/api/v1/Transcribe")]
     public class TranscribeController : ControllerBase
     {
         private readonly ITranscribeService _ITranscribeService;
@@ -145,15 +145,36 @@ namespace Goarif.Server.Controllers
                 ".aac"
             };
 
-            // Check if the file content type indicates an audio file
-            var isMimeTypeValid = audioMimeTypes.Contains(file.ContentType.ToLower());
+            // List of common video MIME types
+            var videoMimeTypes = new[]
+            {
+                "video/mp4",
+                "video/ogg",
+                "video/webm",
+                "video/x-m4v",
+                "video/quicktime"
+            };
 
-            // Check if the file extension indicates an audio file
-            var isExtensionValid = audioExtensions.Contains(Path.GetExtension(file.FileName).ToLower());
+            // List of common video file extensions
+            var videoExtensions = new[]
+            {
+                ".mp4",
+                ".ogg",
+                ".webm",
+                ".m4v",
+                ".mov"
+            };
 
-            // Return true if either the MIME type or file extension is valid
+            // Check if the file content type indicates an audio or video file
+            var isMimeTypeValid = audioMimeTypes.Contains(file.ContentType.ToLower()) || videoMimeTypes.Contains(file.ContentType.ToLower());
+
+            // Check if the file extension indicates an audio or video file
+            var isExtensionValid = audioExtensions.Contains(Path.GetExtension(file.FileName).ToLower()) || videoExtensions.Contains(Path.GetExtension(file.FileName).ToLower());
+
+            // Return true if either the MIME type or file extension is valid for audio or video
             return isMimeTypeValid || isExtensionValid;
         }
+
 
 
     }
