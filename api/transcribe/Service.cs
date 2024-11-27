@@ -108,7 +108,7 @@ namespace RepositoryPattern.Services.TranscribeService
                 memoryStream.Position = 0; // Reset stream position for reading
 
                 // Convert audio stream to text
-                var transcript = await ConvertAudioToTextAsyncWithLang(memoryStream.ToArray(), "audio/mp3", youtubeUrl);
+                var transcript = await ConvertAudioToTextAsyncWithLang(memoryStream.ToArray(), youtubeUrl);
                 var uploadedFile = new UploadDocument
                 {
                     FileName = youtubeUrl.Url,
@@ -150,7 +150,7 @@ namespace RepositoryPattern.Services.TranscribeService
                 memoryStream.Position = 0; // Reset stream position for reading
 
                 // Convert audio stream to text
-                var transcript = await ConvertAudioToTextAsyncWithLang(memoryStream.ToArray(), "audio/mpeg", audioUrl);
+                var transcript = await ConvertAudioToTextAsyncWithLang(memoryStream.ToArray(), audioUrl);
                 var uploadedFile = new UploadDocument
                 {
                     FileName = audioUrl.Url,
@@ -288,7 +288,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        private async Task<object> ConvertAudioToTextAsyncWithLang(byte[] audioData, string contentType, YouTubeUrl youtubeUrl)
+        private async Task<object> ConvertAudioToTextAsyncWithLang(byte[] audioData,YouTubeUrl youtubeUrl)
         {
             var items = await _apiSetting.Find(_ => _.Key == "DeepGram").FirstOrDefaultAsync();
             // Create Deepgram client

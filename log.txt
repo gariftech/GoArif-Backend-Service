@@ -790,3 +790,67 @@
   "smart_format": true
 }
 2024-11-26 17:13:05.363 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-11-26 17:35:52.892 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-11-26 17:35:52.893 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-11-26 17:35:52.893 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-11-26 17:35:52.893 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-11-26 17:35:52.893 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-11-26 17:35:52.893 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-11-26 17:35:52.895 [Information] TranscribeFile: source: System.IO.FileStream
+2024-11-26 17:35:52.904 [Information] TranscribeFile: prerecordedSchema:
+{
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-11-26 17:35:56.387 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-11-26 17:52:26.853 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-11-26 17:52:26.853 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-11-26 17:52:26.854 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-11-26 17:52:26.854 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-11-26 17:52:26.854 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-11-26 17:52:26.854 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-11-26 17:52:26.855 [Information] TranscribeFile: source: System.IO.FileStream
+2024-11-26 17:52:26.855 [Information] TranscribeFile: prerecordedSchema:
+{
+  "language": "audio/mpeg",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-11-26 17:52:29.729 [Error] PostAsync<R, S, T>: Deepgram.Models.Exceptions.v1.DeepgramRESTException thrown Bad Request: No such model/language/tier combination found.
+2024-11-26 17:52:47.582 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-11-26 17:52:47.583 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-11-26 17:52:47.583 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-11-26 17:52:47.583 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-11-26 17:52:47.583 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-11-26 17:52:47.583 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-11-26 17:52:47.585 [Information] TranscribeFile: source: System.IO.FileStream
+2024-11-26 17:52:47.585 [Information] TranscribeFile: prerecordedSchema:
+{
+  "language": "audio/mpeg",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-11-26 17:52:50.621 [Error] PostAsync<R, S, T>: Deepgram.Models.Exceptions.v1.DeepgramRESTException thrown Bad Request: No such model/language/tier combination found.
+2024-11-26 17:55:19.139 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-11-26 17:55:19.140 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-11-26 17:55:19.140 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-11-26 17:55:19.140 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-11-26 17:55:19.141 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-11-26 17:55:19.141 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-11-26 17:55:19.142 [Information] TranscribeFile: source: System.IO.FileStream
+2024-11-26 17:55:19.152 [Information] TranscribeFile: prerecordedSchema:
+{
+  "language": "audio/mpeg",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-11-26 17:55:21.354 [Error] PostAsync<R, S, T>: Deepgram.Models.Exceptions.v1.DeepgramRESTException thrown Bad Request: No such model/language/tier combination found.
