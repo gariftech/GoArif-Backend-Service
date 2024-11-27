@@ -20,14 +20,25 @@ namespace RepositoryPattern.Services.RiwayatService
         {
             try
             {
-                var items = await dataUser.Find(_ => _.UserId == id).ToListAsync();
-                return new { code = 200, data = items, message = "Data Add Complete" };
+                // Sort by 'CreatedAt' field in descending order (latest first)
+                var items = await dataUser
+            .Find(_ => _.UserId == id && _.IsActive == true)  // Filter by 'IsActive' field
+            .SortByDescending(item => item.CreatedAt)  // Sort by 'CreatedAt' in descending order
+            .ToListAsync();
+
+                return new { code = 200, data = items, message = "Data retrieved successfully" };
             }
             catch (CustomException)
             {
                 throw;
             }
+            catch (Exception ex)
+            {
+                // Catch any other exceptions to avoid exposing raw errors to the client
+                return new { code = 500, message = $"An error occurred: {ex.Message}" };
+            }
         }
+
         public async Task<object> Post(CreateRiwayatDto item, string idUser)
         {
             try
@@ -41,6 +52,8 @@ namespace RepositoryPattern.Services.RiwayatService
                     Result = item.Result,
                     Prompt = item.Prompt,
                     UserId = idUser,
+                    IsActive = true,
+                    CreatedAt = DateTime.Now,
                 };
                 await dataUser.InsertOneAsync(RiwayatData);
                 return new { code = 200, id = RiwayatData.Id, message = "Data Add Complete" };

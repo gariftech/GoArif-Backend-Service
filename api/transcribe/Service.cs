@@ -88,12 +88,13 @@ namespace RepositoryPattern.Services.TranscribeService
                 {
                     Id = Guid.NewGuid().ToString(),
                     Title = file.FileName,
-                    Type = "Transcribe",
+                    Type = "Transcribe File",
                     File = resultUpoad?.File,
                     Result = Result.ToString(),
                     Prompt = resultUpoad?.Prompt,
                     UserId = idUser,
                     CreatedAt = DateTime.Now,
+                    IsActive = true,
                 };
                 await _riwayat.InsertOneAsync(RiwayatData);
                 return uploadedFile;
@@ -141,13 +142,14 @@ namespace RepositoryPattern.Services.TranscribeService
                 var RiwayatData = new Riwayat()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    Title = "",
-                    Type = "UrlYoutube",
+                    Title = youtubeUrl.Url,
+                    Type = "Transcribe UrlYoutube",
                     File = [youtubeUrl.Url],
                     Result = transcript.ToString(),
                     Prompt = "",
                     UserId = idUser,
                     CreatedAt = DateTime.Now,
+                    IsActive = true,
                 };
                 await _riwayat.InsertOneAsync(RiwayatData);
 
@@ -196,13 +198,14 @@ namespace RepositoryPattern.Services.TranscribeService
                 var RiwayatData = new Riwayat()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    Title = "",
-                    Type = "UrlAudio",
+                    Title = audioUrl.Url,
+                    Type = "Transcribe UrlAudio",
                     File = [audioUrl.Url],
                     Result = transcript.ToString(),
                     Prompt = "",
                     UserId = idUser,
                     CreatedAt = DateTime.Now,
+                    IsActive = true,
                 };
                 await _riwayat.InsertOneAsync(RiwayatData);
 
@@ -254,13 +257,14 @@ namespace RepositoryPattern.Services.TranscribeService
                 var RiwayatData = new Riwayat()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    Title = "",
-                    Type = "UrlDrive",
+                    Title = googleDriveLink.Url,
+                    Type = "Transcribe UrlDrive",
                     File = [googleDriveLink.Url],
                     Result = transcript.ToString(),
                     Prompt = "",
                     UserId = idUser,
                     CreatedAt = DateTime.Now,
+                    IsActive = true,
                 };
                 await _riwayat.InsertOneAsync(RiwayatData);
 
@@ -323,7 +327,7 @@ namespace RepositoryPattern.Services.TranscribeService
                     }, cancelToken);
 
                 // Process and return the transcription result
-                var transcript =  response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
+                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
                 return transcript;
             }
             catch (Exception ex)
