@@ -15,24 +15,12 @@ namespace RepositoryPattern.Services.PromptService
             dataUser = database.GetCollection<Prompt>("Prompts");
             this.key = configuration.GetSection("AppSettings")["JwtKey"];
         }
-        public async Task<Object> Get(string type)
-        {
-            try
-            {
-                var items = await dataUser.Find(_ => _.Type == "filesum").ToListAsync();
-                return new { code = 200, data = items, message = "Data Add Complete" };
-            }
-            catch (CustomException)
-            {
-                throw;
-            }
-        }
 
         public async Task<Object> GetById(string id)
         {
             try
             {
-                var items = await dataUser.Find(_ => _.Id == id).FirstOrDefaultAsync();
+                var items = await dataUser.Find(_ => _.Type == id).ToListAsync();
                 return new { code = 200, data = items, message = "Data Add Complete" };
             }
             catch (CustomException)

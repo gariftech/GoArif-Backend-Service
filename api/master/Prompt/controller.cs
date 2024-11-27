@@ -7,7 +7,7 @@ namespace Goarif.Server.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("/[controller]")]
+    [Route("/api/v1/prompt")]
     public class PromptController : ControllerBase
     {
         private readonly IPromptService _IPromptService;
@@ -18,23 +18,6 @@ namespace Goarif.Server.Controllers
             _IPromptService = PromptService;
             _errorUtility = new ErrorHandlingUtility();
             _masterValidationService = new ValidationPromptDto();
-        }
-
-        // [Authorize]
-        [HttpGet("type/{id}")]
-        public async Task<object> Get([FromRoute]string id)
-        {
-            try
-            {
-                var data = await _IPromptService.Get(id);
-                return Ok(data);
-            }
-            catch (CustomException ex)
-            {
-                int errorCode = ex.ErrorCode;
-                var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
-                return _errorUtility.HandleError(errorCode, errorResponse);
-            }
         }
 
         [HttpGet("{id}")]

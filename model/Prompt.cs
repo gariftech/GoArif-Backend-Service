@@ -7,6 +7,8 @@ namespace Goarif.Shared.Models
     {
         [BsonId]
         public string? Id { get; set; }
+        [BsonElement("Title")]
+        public string? Title { get; set; }
 
         [BsonElement("Name")]
         public string? Name { get; set; }
