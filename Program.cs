@@ -11,6 +11,8 @@ using SendingEmail;
 using RepositoryPattern.Services.AttachmentService;
 using RepositoryPattern.Services.ApiSettingService;
 using RepositoryPattern.Services.TranscribeService;
+using RepositoryPattern.Services.PromptService;
+
 using Microsoft.AspNetCore.Http.Features;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +25,8 @@ builder.Services.AddScoped<IOtpService, OtpService>();
 builder.Services.AddScoped<IAttachmentService, AttachmentService>();
 builder.Services.AddScoped<IApiSettingService, ApiSettingService>();
 builder.Services.AddScoped<ITranscribeService, TranscribeService>();
+builder.Services.AddScoped<IPromptService, PromptService>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
