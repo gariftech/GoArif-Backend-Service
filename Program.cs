@@ -14,6 +14,7 @@ using RepositoryPattern.Services.TranscribeService;
 using RepositoryPattern.Services.PromptService;
 
 using Microsoft.AspNetCore.Http.Features;
+using RepositoryPattern.Services.RiwayatService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ builder.Services.AddScoped<IAttachmentService, AttachmentService>();
 builder.Services.AddScoped<IApiSettingService, ApiSettingService>();
 builder.Services.AddScoped<ITranscribeService, TranscribeService>();
 builder.Services.AddScoped<IPromptService, PromptService>();
+builder.Services.AddScoped<IRiwayatService, RiwayatService>();
+
 
 
 builder.Services.AddControllers();

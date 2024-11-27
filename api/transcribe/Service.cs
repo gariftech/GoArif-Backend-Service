@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using Deepgram;
 using Deepgram.Models.Listen.v1.REST;
 using Goarif.Shared.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -16,15 +17,22 @@ namespace RepositoryPattern.Services.TranscribeService
     {
         private readonly IMongoCollection<Transcribe> dataUser;
         private readonly IMongoCollection<ApiSetting> _apiSetting;
+        private readonly IMongoCollection<Riwayat> _riwayat;
+        private readonly IAttachmentService _IAttachmentService;
+
+
         private readonly string key;
         private readonly string _apiKey = "cd126858ce8cfafa9e32e79ea04117fff14d4e2b"; // Your Deepgram API key
 
-        public TranscribeService(IConfiguration configuration)
+        public TranscribeService(IConfiguration configuration, IAttachmentService roleService)
         {
             MongoClient client = new MongoClient(configuration.GetConnectionString("ConnectionURI"));
             IMongoDatabase database = client.GetDatabase("Goarif");
             dataUser = database.GetCollection<Transcribe>("Transcribes");
             _apiSetting = database.GetCollection<ApiSetting>("ApiSettings");
+            _riwayat = database.GetCollection<Riwayat>("Riwayat");
+            _IAttachmentService = roleService;
+
             this.key = configuration.GetSection("AppSettings")["JwtKey"];
         }
 
@@ -54,7 +62,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        public async Task<UploadDocument> PostAudio(IFormFile file, string languange)
+        public async Task<UploadDocument> PostAudio(IFormFile file, string languange, string idUser)
         {
             if (file == null || file.Length == 0)
                 throw new ArgumentException("Invalid file");
@@ -65,20 +73,34 @@ namespace RepositoryPattern.Services.TranscribeService
                 memoryStream.Position = 0;
 
                 var audioData = memoryStream.ToArray();
-                var transcript = await ConvertAudioToTextAsync(audioData, languange);
+                object Result = await ConvertAudioToTextAsync(audioData, languange);
 
                 var uploadedFile = new UploadDocument
                 {
                     FileName = file.FileName,
                     ContentType = file.ContentType,
-                    Result = transcript // Store the text result
+                    Result = Result // Store the text result
                 };
 
+                Riwayat resultUpoad = await _IAttachmentService.Upload(file, idUser);
+
+                var RiwayatData = new Riwayat()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = file.FileName,
+                    Type = "Transcribe",
+                    File = resultUpoad?.File,
+                    Result = Result.ToString(),
+                    Prompt = resultUpoad?.Prompt,
+                    UserId = idUser,
+                    CreatedAt = DateTime.Now,
+                };
+                await _riwayat.InsertOneAsync(RiwayatData);
                 return uploadedFile;
             }
         }
 
-        public async Task<object> PostAudioYoutubeUrl(YouTubeUrl youtubeUrl)
+        public async Task<object> PostAudioYoutubeUrl(YouTubeUrl youtubeUrl, string idUser)
         {
             try
             {
@@ -116,6 +138,19 @@ namespace RepositoryPattern.Services.TranscribeService
                     Result = transcript // Store the text result
                 };
 
+                var RiwayatData = new Riwayat()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "",
+                    Type = "UrlYoutube",
+                    File = [youtubeUrl.Url],
+                    Result = transcript.ToString(),
+                    Prompt = "",
+                    UserId = idUser,
+                    CreatedAt = DateTime.Now,
+                };
+                await _riwayat.InsertOneAsync(RiwayatData);
+
                 return uploadedFile;
             }
             catch (Exception ex)
@@ -125,7 +160,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        public async Task<object> PostAudioUrl(YouTubeUrl audioUrl)
+        public async Task<object> PostAudioUrl(YouTubeUrl audioUrl, string idUser)
         {
             try
             {
@@ -158,6 +193,19 @@ namespace RepositoryPattern.Services.TranscribeService
                     Result = transcript // Store the text result
                 };
 
+                var RiwayatData = new Riwayat()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "",
+                    Type = "UrlAudio",
+                    File = [audioUrl.Url],
+                    Result = transcript.ToString(),
+                    Prompt = "",
+                    UserId = idUser,
+                    CreatedAt = DateTime.Now,
+                };
+                await _riwayat.InsertOneAsync(RiwayatData);
+
                 return uploadedFile;
             }
             catch (Exception ex)
@@ -167,7 +215,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        public async Task<object> PostAudioUrlDrive(YouTubeUrl googleDriveLink)
+        public async Task<object> PostAudioUrlDrive(YouTubeUrl googleDriveLink, string idUser)
         {
             try
             {
@@ -202,6 +250,19 @@ namespace RepositoryPattern.Services.TranscribeService
                     ContentType = "audio/mpeg",
                     Result = transcript // Store the text result
                 };
+
+                var RiwayatData = new Riwayat()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = "",
+                    Type = "UrlDrive",
+                    File = [googleDriveLink.Url],
+                    Result = transcript.ToString(),
+                    Prompt = "",
+                    UserId = idUser,
+                    CreatedAt = DateTime.Now,
+                };
+                await _riwayat.InsertOneAsync(RiwayatData);
 
                 return uploadedFile;
             }
@@ -258,11 +319,11 @@ namespace RepositoryPattern.Services.TranscribeService
                         Model = "nova-2",
                         Language = languange,
                         SmartFormat = true,
-                        Paragraphs=true
+                        Paragraphs = true
                     }, cancelToken);
 
                 // Process and return the transcription result
-                var transcript = response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
+                var transcript =  response?.Results?.Channels?[0]?.Alternatives?[0]?.Paragraphs;
                 return transcript;
             }
             catch (Exception ex)
@@ -288,7 +349,7 @@ namespace RepositoryPattern.Services.TranscribeService
             }
         }
 
-        private async Task<object> ConvertAudioToTextAsyncWithLang(byte[] audioData,YouTubeUrl youtubeUrl)
+        private async Task<object> ConvertAudioToTextAsyncWithLang(byte[] audioData, YouTubeUrl youtubeUrl)
         {
             var items = await _apiSetting.Find(_ => _.Key == "DeepGram").FirstOrDefaultAsync();
             // Create Deepgram client
@@ -312,7 +373,7 @@ namespace RepositoryPattern.Services.TranscribeService
                         Model = "nova-2",
                         Language = youtubeUrl.Languange,
                         SmartFormat = true,
-                        Paragraphs=true
+                        Paragraphs = true
                     }, cancelToken);
 
                 // Process and return the transcription result

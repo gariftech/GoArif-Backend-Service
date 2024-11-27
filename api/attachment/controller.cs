@@ -1,5 +1,6 @@
 
 
+using Goarif.Shared.Models;
 using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -99,51 +100,8 @@ namespace Twillink.Server.Controllers
             {
                 string accessToken = HttpContext.Request.Headers["Authorization"];
                 string idUser = await _ConvertJwt.ConvertString(accessToken);
-
-                if (file == null || file.Length == 0)
-                {
-                    throw new CustomException(400, "Message", "File not found");
-                }
-
-                // Define max file size: 300 MB
-                const long maxFileSize = 300 * 1024 * 1024; // 300 MB
-
-                // Validate file size
-                if (file.Length > maxFileSize)
-                {
-                    throw new CustomException(400, "Message", "File size must not exceed 300 MB.");
-                }
-
-                // Initialize GridFSBucket
-                var client = new MongoClient(_conf.GetConnectionString("ConnectionURI"));
-                var database = client.GetDatabase("Twillink");
-                var gridFSBucket = new GridFSBucket(database);
-
-                // Upload file to GridFS
-                ObjectId fileId;
-                using (var stream = file.OpenReadStream())
-                {
-                    var options = new GridFSUploadOptions
-                    {
-                        Metadata = new BsonDocument
-                {
-                    { "FileName", file.FileName },
-                    { "ContentType", file.ContentType },
-                    { "UploadedBy", idUser },
-                    { "UploadedAt", DateTime.UtcNow }
-                }
-                    };
-
-                    fileId = await gridFSBucket.UploadFromStreamAsync(file.FileName, stream, options);
-                }
-
-                return Ok(new
-                {
-                    status = true,
-                    message = "File uploaded successfully",
-                    fileId = fileId.ToString(),
-                    path = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/api/v1/Attachment/Download/{fileId}"
-                });
+                Riwayat data = await _IAttachmentService.Upload(file, idUser);
+                return Ok(data);
             }
             catch (CustomException ex)
             {

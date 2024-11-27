@@ -1,6 +1,8 @@
 using Goarif.Shared.Models;
 using Google.Cloud.Storage.V1;
+using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.GridFS;
 
 namespace RepositoryPattern.Services.AttachmentService
 {
@@ -10,6 +12,7 @@ namespace RepositoryPattern.Services.AttachmentService
         private readonly StorageClient storageClient;
         private readonly IMongoCollection<Attachments> AttachmentLink;
         private readonly IMongoCollection<User> users;
+        private readonly IConfiguration _conf;
 
         private readonly string key;
 
@@ -19,6 +22,7 @@ namespace RepositoryPattern.Services.AttachmentService
             IMongoDatabase database = client.GetDatabase("Goarif");
             AttachmentLink = database.GetCollection<Attachments>("Attachment");
             this.key = configuration.GetSection("AppSettings")["JwtKey"];
+            _conf = configuration;
         }
         public async Task<Object> Get(string Username)
         {
@@ -26,6 +30,58 @@ namespace RepositoryPattern.Services.AttachmentService
             {
                 var items = await AttachmentLink.Find(_ => _.UserId == Username).ToListAsync();
                 return new { code = 200, data = items, message = "Complete" };
+            }
+            catch (CustomException ex)
+            {
+
+                throw new CustomException(400, "Error", ex.Message); ;
+            }
+        }
+
+        public async Task<Riwayat> Upload(IFormFile file, string idUser)
+        {
+            try
+            {
+                if (file == null || file.Length == 0)
+                {
+                    throw new CustomException(400, "Message", "File not found");
+                }
+
+                // Define max file size: 300 MB
+                const long maxFileSize = 300 * 1024 * 1024; // 300 MB
+
+                // Validate file size
+                if (file.Length > maxFileSize)
+                {
+                    throw new CustomException(400, "Message", "File size must not exceed 300 MB.");
+                }
+
+                // Initialize GridFSBucket
+                var client = new MongoClient(_conf.GetConnectionString("ConnectionURI"));
+                var database = client.GetDatabase("Goarif");
+                var gridFSBucket = new GridFSBucket(database);
+
+                // Upload file to GridFS
+                ObjectId fileId;
+                using (var stream = file.OpenReadStream())
+                {
+                    var options = new GridFSUploadOptions
+                    {
+                        Metadata = new BsonDocument
+                {
+                    { "FileName", file.FileName },
+                    { "ContentType", file.ContentType },
+                    { "UploadedBy", idUser },
+                    { "UploadedAt", DateTime.UtcNow }
+                }
+                    };
+
+                    fileId = await gridFSBucket.UploadFromStreamAsync(file.FileName, stream, options);
+                }
+                return new Riwayat
+                {
+                    File = [$"https://app.goarif.co/api/v1/Attachment/Download/{fileId}"],
+                };
             }
             catch (CustomException ex)
             {

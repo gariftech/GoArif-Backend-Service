@@ -11,11 +11,13 @@ namespace Goarif.Server.Controllers
         private readonly ITranscribeService _ITranscribeService;
         private readonly ErrorHandlingUtility _errorUtility;
         private readonly ValidationTranscribeDto _TranscribeValidationService;
-        public TranscribeController(ITranscribeService TranscribeService)
+         private readonly ConvertJWT _ConvertJwt;
+        public TranscribeController(ITranscribeService TranscribeService, ConvertJWT convert)
         {
             _ITranscribeService = TranscribeService;
             _errorUtility = new ErrorHandlingUtility();
             _TranscribeValidationService = new ValidationTranscribeDto();
+            _ConvertJwt = convert;
         }
 
         [Authorize]
@@ -57,13 +59,15 @@ namespace Goarif.Server.Controllers
         {
             try
             {
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
                 // Check if the uploaded file is not null and is a PDF
                 if (file == null || !IsAudioFile(file))
                 {
                     var errorResponse = new { code = 400, errorMessage = "Please upload a audio file." };
                     return BadRequest(errorResponse);
                 }
-                var data = await _ITranscribeService.PostAudio(file, languange);
+                var data = await _ITranscribeService.PostAudio(file, languange, idUser);
                 return Ok(data);
             }
             catch (CustomException ex)
@@ -79,7 +83,9 @@ namespace Goarif.Server.Controllers
         {
             try
             {
-                var data = await _ITranscribeService.PostAudioYoutubeUrl(url);
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                var data = await _ITranscribeService.PostAudioYoutubeUrl(url, idUser);
                 return Ok(data);
             }
             catch (CustomException ex)
@@ -95,7 +101,9 @@ namespace Goarif.Server.Controllers
         {
             try
             {
-                var data = await _ITranscribeService.PostAudioUrl(url);
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                var data = await _ITranscribeService.PostAudioUrl(url,idUser);
                 return Ok(data);
             }
             catch (CustomException ex)
@@ -111,7 +119,9 @@ namespace Goarif.Server.Controllers
         {
             try
             {
-                var data = await _ITranscribeService.PostAudioUrlDrive(url);
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                var data = await _ITranscribeService.PostAudioUrlDrive(url,idUser);
                 return Ok(data);
             }
             catch (CustomException ex)
