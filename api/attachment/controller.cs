@@ -90,7 +90,7 @@ namespace Twillink.Server.Controllers
 
 
 
-        [Authorize]
+        // [Authorize]
         [HttpPost]
         [RequestSizeLimit(300 * 1024 * 1024)] // 300 MB
         [Route("Upload")]
