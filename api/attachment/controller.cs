@@ -90,7 +90,7 @@ namespace Twillink.Server.Controllers
 
 
 
-        // [Authorize]
+        [Authorize]
         [HttpPost]
         [RequestSizeLimit(300 * 1024 * 1024)] // 300 MB
         [Route("Upload")]
@@ -101,6 +101,30 @@ namespace Twillink.Server.Controllers
                 string accessToken = HttpContext.Request.Headers["Authorization"];
                 string idUser = await _ConvertJwt.ConvertString(accessToken);
                 Riwayat data = await _IAttachmentService.Upload(file, idUser);
+                return Ok(data);
+            }
+            catch (CustomException ex)
+            {
+                int errorCode = ex.ErrorCode;
+                var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
+                return _errorUtility.HandleError(errorCode, errorResponse);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { status = false, message = "An error occurred", details = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [RequestSizeLimit(300 * 1024 * 1024)] // 300 MB
+        [Route("Upload/Paython")]
+        public async Task<IActionResult> UploadPY(IFormFile file)
+        {
+            try
+            {
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                Riwayat data = await _IAttachmentService.Upload(file, "python");
                 return Ok(data);
             }
             catch (CustomException ex)
