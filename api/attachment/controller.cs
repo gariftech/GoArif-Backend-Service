@@ -122,8 +122,8 @@ namespace Twillink.Server.Controllers
         {
             try
             {
-                string accessToken = HttpContext.Request.Headers["Authorization"];
-                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                // string accessToken = HttpContext.Request.Headers["Authorization"];
+                // string idUser = await _ConvertJwt.ConvertString(accessToken);
                 Riwayat data = await _IAttachmentService.Upload(file, "python");
                 return Ok(data);
             }
