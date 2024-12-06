@@ -1398,3 +1398,784 @@
   "smart_format": true
 }
 2024-11-28 12:37:03.330 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:27:44.568 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:27:44.601 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:27:44.602 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:27:44.602 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:27:44.603 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:27:44.608 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:27:44.632 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:27:44.653 [Information] TranscribeFile: prerecordedSchema:
+{
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:27:48.164 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:33:20.314 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:33:20.315 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:33:20.316 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:33:20.316 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:33:20.316 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:33:20.316 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:33:20.320 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:33:20.329 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:33:24.033 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:34:07.323 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:34:07.324 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:34:07.324 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:34:07.324 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:34:07.324 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:34:07.325 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:34:07.347 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:34:07.347 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:34:57.321 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:38:30.103 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:38:30.106 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:38:30.107 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:38:30.107 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:38:30.107 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:38:30.107 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:38:30.112 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:38:30.120 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "id",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:38:47.214 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:38:58.910 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:38:58.910 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:38:58.910 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:38:58.911 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:38:58.911 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:38:58.911 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:38:58.929 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:38:58.929 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:39:16.910 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:48:16.301 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:48:16.302 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:48:16.302 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:48:16.302 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:48:16.302 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:48:16.302 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:48:16.303 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:48:16.304 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:48:20.926 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:51:29.149 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:51:29.150 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:51:29.150 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:51:29.150 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:51:29.150 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:51:29.150 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:51:29.152 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:51:29.152 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:51:31.911 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:52:35.793 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:52:35.793 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:52:35.794 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:52:35.794 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:52:35.794 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:52:35.794 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:52:35.796 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:52:35.796 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:52:39.618 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:54:26.180 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:54:26.180 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:54:26.180 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:54:26.180 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:54:26.180 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:54:26.180 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:54:26.182 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:54:26.182 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:54:30.198 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 20:57:20.128 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 20:57:20.128 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 20:57:20.129 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 20:57:20.129 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 20:57:20.129 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 20:57:20.129 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 20:57:20.130 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 20:57:20.130 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 20:57:23.003 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:02:27.345 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:02:27.346 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:02:27.346 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:02:27.346 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:02:27.346 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:02:27.346 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:02:27.351 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:02:27.351 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:02:44.746 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:03:31.936 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:03:31.937 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:03:31.937 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:03:31.937 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:03:31.937 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:03:31.937 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:03:31.942 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:03:31.942 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:03:46.693 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:06:51.334 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:06:51.335 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:06:51.335 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:06:51.335 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:06:51.335 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:06:51.335 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:06:51.339 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:06:51.340 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:07:10.543 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:07:55.592 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:07:55.593 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:07:55.593 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:07:55.593 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:07:55.593 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:07:55.593 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:07:55.599 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:07:55.599 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:08:07.717 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:08:35.197 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:08:35.197 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:08:35.197 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:08:35.197 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:08:35.197 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:08:35.197 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:08:35.202 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:08:35.210 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:08:43.480 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:11:11.101 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:11:11.103 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:11:11.103 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:11:11.103 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:11:11.103 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:11:11.103 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:11:11.109 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:11:11.109 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:11:29.754 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 21:17:16.656 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 21:17:16.657 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 21:17:16.657 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 21:17:16.657 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 21:17:16.657 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 21:17:16.657 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 21:17:16.673 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 21:17:16.673 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 21:17:48.386 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:18:57.842 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:18:57.843 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:18:57.844 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:18:57.844 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:18:57.844 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:18:57.844 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:18:57.846 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:18:57.854 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:19:02.147 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:19:13.408 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:19:13.408 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:19:13.408 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:19:13.408 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:19:13.409 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:19:13.409 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:19:13.410 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:19:13.410 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:19:16.839 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:19:42.224 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:19:42.224 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:19:42.224 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:19:42.224 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:19:42.224 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:19:42.225 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:19:42.229 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:19:42.229 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:19:56.578 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:24:47.285 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:24:47.285 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:24:47.286 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:24:47.286 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:24:47.286 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:24:47.286 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:24:47.287 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:24:47.287 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:24:50.650 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:24:54.469 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:24:54.471 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:24:54.472 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:24:54.472 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:24:54.472 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:24:54.472 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:24:54.473 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:24:54.473 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:24:57.475 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:26:13.073 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:26:13.074 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:26:13.074 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:26:13.074 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:26:13.074 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:26:13.074 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:26:13.075 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:26:13.076 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:26:17.297 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:26:21.101 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:26:21.103 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:26:21.103 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:26:21.104 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:26:21.104 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:26:21.104 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:26:21.105 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:26:21.105 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:26:24.822 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:35:18.500 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:35:18.500 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:35:18.500 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:35:18.500 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:35:18.501 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:35:18.501 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:35:18.503 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:35:18.504 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:35:22.020 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:36:03.411 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:36:03.419 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:36:03.419 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:36:03.419 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:36:03.419 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:36:03.419 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:36:03.420 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:36:03.421 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:36:06.872 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:36:51.158 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:36:51.160 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:36:51.160 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:36:51.160 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:36:51.160 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:36:51.160 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:36:51.181 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:36:51.181 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:36:55.307 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:38:46.294 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:38:46.295 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:38:46.295 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:38:46.295 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:38:46.295 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:38:46.295 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:38:46.296 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:38:46.297 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:38:49.996 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:40:48.168 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:40:48.169 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:40:48.169 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:40:48.169 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:40:48.169 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:40:48.169 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:40:48.171 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:40:48.171 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:40:51.325 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:46:36.889 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:46:36.890 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:46:36.890 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:46:36.890 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:46:36.890 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:46:36.890 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:46:36.893 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:46:36.894 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:46:39.291 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:47:14.588 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:47:14.589 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:47:14.589 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:47:14.589 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:47:14.589 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:47:14.589 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:47:14.590 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:47:14.590 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:47:18.410 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:47:28.213 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:47:28.213 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:47:28.213 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:47:28.214 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:47:28.214 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:47:28.214 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:47:28.216 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:47:28.216 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:47:31.607 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:52:18.645 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:52:18.645 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:52:18.645 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:52:18.645 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:52:18.645 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:52:18.645 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:52:18.646 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:52:18.646 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:52:21.661 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:54:27.448 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:54:27.448 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:54:27.448 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:54:27.448 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:54:27.448 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:54:27.448 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:54:27.450 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:54:27.450 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:54:30.694 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-06 23:55:47.855 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-06 23:55:47.855 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-06 23:55:47.855 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-06 23:55:47.856 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-06 23:55:47.856 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-06 23:55:47.856 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-06 23:55:47.857 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-06 23:55:47.857 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-06 23:55:52.295 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:20:10.569 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:20:10.589 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:20:10.589 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:20:10.590 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:20:10.590 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:20:10.596 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:20:10.619 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:20:10.648 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:20:13.524 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:24:05.000 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:24:05.000 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:24:05.000 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:24:05.001 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:24:05.001 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:24:05.001 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:24:05.004 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:24:05.012 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:24:09.093 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:33:10.635 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:33:10.636 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:33:10.636 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:33:10.636 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:33:10.636 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:33:10.636 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:33:10.639 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:33:10.647 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:33:14.496 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:45:20.892 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:45:20.893 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:45:20.893 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:45:20.894 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:45:20.894 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:45:20.894 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:45:20.895 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:45:20.895 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:45:25.649 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:50:18.369 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:50:18.370 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:50:18.370 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:50:18.371 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:50:18.371 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:50:18.371 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:50:18.372 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:50:18.372 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:50:22.444 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 00:51:43.061 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:51:43.061 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:51:43.062 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:51:43.062 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:51:43.062 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:51:43.062 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:51:43.082 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:51:43.082 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:53:47.847 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:53:47.848 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:53:47.848 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:53:47.848 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:53:47.848 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:53:47.848 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:53:47.849 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:53:47.850 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:55:44.395 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 00:55:44.396 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 00:55:44.396 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 00:55:44.396 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 00:55:44.396 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 00:55:44.396 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 00:55:44.398 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 00:55:44.398 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 00:55:48.802 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 01:01:43.097 [Information] PostAsync<R, S, T>: Task was cancelled.
+2024-12-07 01:03:47.860 [Information] PostAsync<R, S, T>: Task was cancelled.
+2024-12-07 01:09:20.326 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 01:09:20.327 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 01:09:20.328 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 01:09:20.328 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 01:09:20.328 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 01:09:20.328 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 01:09:20.330 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 01:09:20.341 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 01:09:25.959 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 01:25:36.904 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 01:25:36.904 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 01:25:36.904 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 01:25:36.905 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 01:25:36.905 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 01:25:36.905 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 01:25:36.906 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 01:25:36.907 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 01:25:43.511 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded
+2024-12-07 01:26:18.708 [Information] DeepgramHttpClientOptions: OnPrem: False
+2024-12-07 01:26:18.708 [Information] DeepgramHttpClientOptions: APIVersion: v1
+2024-12-07 01:26:18.708 [Information] DeepgramHttpClientOptions: REST BaseAddress does not contain API version: api.deepgram.com
+2024-12-07 01:26:18.709 [Information] DeepgramHttpClientOptions: BaseAddress contains no protocol: api.deepgram.com/v1
+2024-12-07 01:26:18.709 [Information] DeepgramHttpClientOptions: BaseAddress: https://api.deepgram.com/v1
+2024-12-07 01:26:18.709 [Information] HttpClientFactory.Create: HttpClient ID: DEEPGRAM_HTTP_CLIENT
+2024-12-07 01:26:18.710 [Information] TranscribeFile: source: System.IO.FileStream
+2024-12-07 01:26:18.710 [Information] TranscribeFile: prerecordedSchema:
+{
+  "diarize": true,
+  "language": "en",
+  "model": "nova-2",
+  "paragraphs": true,
+  "punctuate": true,
+  "smart_format": true
+}
+2024-12-07 01:26:23.449 [Information] TranscribeFile: https://api.deepgram.com/v1/listen Succeeded

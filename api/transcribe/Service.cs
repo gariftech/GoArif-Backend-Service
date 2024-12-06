@@ -323,7 +323,8 @@ namespace RepositoryPattern.Services.TranscribeService
                         Model = "nova-2",
                         Language = languange,
                         SmartFormat = true,
-                        Paragraphs = true
+                        Paragraphs = true,
+                        Diarize=true
                     }, cancelToken);
 
                 // Process and return the transcription result
@@ -377,7 +378,8 @@ namespace RepositoryPattern.Services.TranscribeService
                         Model = "nova-2",
                         Language = youtubeUrl.Languange,
                         SmartFormat = true,
-                        Paragraphs = true
+                        Paragraphs = true,
+                        Diarize=true
                     }, cancelToken);
 
                 // Process and return the transcription result
