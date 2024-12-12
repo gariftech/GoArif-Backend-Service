@@ -110,6 +110,24 @@ namespace Goarif.Server.Controllers
             }
         }
 
+        // [Authorize]
+        [HttpGet]
+        [Route("recaptcha/{token}")]
+        public async Task<object> Recaptcha([FromRoute] string token)
+        {
+            try
+            {
+                var dataList = await _IAuthService.Recaptcha(token);
+                return Ok(dataList);
+            }
+            catch (CustomException ex)
+            {
+                int errorCode = ex.ErrorCode;
+                var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
+                return _errorUtility.HandleError(errorCode, errorResponse);
+            }
+        }
+
         [HttpGet]
         [Route("check-mail-registered/{email}")]
         public async Task<object> CheckMail([FromRoute] string email)

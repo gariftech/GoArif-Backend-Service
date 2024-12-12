@@ -9,6 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using SendingEmail;
 using Goarif.Shared.Models;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace RepositoryPattern.Services.AuthService
 {
@@ -112,12 +115,12 @@ namespace RepositoryPattern.Services.AuthService
                 // string userId = roleData.Id;
                 // string token = jwtService.GenerateJwtToken(userId);
                 var sending = _emailService.SendEmailAsync(email);
-                return new { code = 200, id = roleIdAsString, message = "Register Success, Please activate your account via email"};
+                return new { code = 200, id = roleIdAsString, message = "Register Success, Please activate your account via email" };
             }
             catch (CustomException ex)
             {
 
-                throw new CustomException(400, "Error", ex.Message);;
+                throw new CustomException(400, "Error", ex.Message); ;
             }
         }
 
@@ -256,6 +259,47 @@ namespace RepositoryPattern.Services.AuthService
             }
         }
 
+        public async Task<object> Recaptcha(string token)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var url = $"https://www.google.com/recaptcha/api/siteverify?secret=6LdNRJkqAAAAACmViReIK4FYoJ3LPv00iyQ0w_Es&response={token}";
+                    var response = await client.PostAsync(url, null);
+                    response.EnsureSuccessStatusCode();
+
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    var recaptchaResponse = JsonSerializer.Deserialize<RecaptchaResponse>(responseString);
+                    Console.WriteLine(recaptchaResponse.Success);
+                    if (recaptchaResponse.Success == true)
+                    {
+                        return new { code = 200, Status = true };
+                    }
+                    else
+                    {
+                        return new { code = 200, Status = false };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CustomException(400, "Message", $"Error: {ex.Message}");
+            }
+        }
+
+        public partial class RecaptchaResponse
+        {
+            [JsonPropertyName("success")]
+            public bool Success { get; set; }
+
+            [JsonPropertyName("error-codes")]
+            public string[] ErrorCodes { get; set; }
+        }
+
         public async Task<object> VerifyPin(string id)
         {
             try
@@ -311,12 +355,12 @@ namespace RepositoryPattern.Services.AuthService
                 var userOtp = await dataOtp.Find(x => x.CodeOtp.Equals(dto.CodeOtp, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefaultAsync();
 
                 if (userOtp == null)
-                    throw new CustomException(400,"Message", "Otp not found");
+                    throw new CustomException(400, "Message", "Otp not found");
 
                 // Cari user berdasarkan email dari OTP
                 var roleData = await dataUser.Find(x => x.Email.Equals(userOtp.Email, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefaultAsync();
                 if (roleData == null)
-                    throw new CustomException(400,"Message", "User not found");
+                    throw new CustomException(400, "Message", "User not found");
 
                 // Hash password baru
                 string passwordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
@@ -329,7 +373,7 @@ namespace RepositoryPattern.Services.AuthService
             }
             catch (Exception ex)
             {
-                throw new CustomException(400,"Message", $"ForgotPassword Error: {ex.Message}");
+                throw new CustomException(400, "Message", $"ForgotPassword Error: {ex.Message}");
             }
         }
 
@@ -347,7 +391,7 @@ namespace RepositoryPattern.Services.AuthService
             catch (Exception ex)
             {
 
-                throw new CustomException(400,"Message", $"ForgotPassword Error: {ex.Message}");
+                throw new CustomException(400, "Message", $"ForgotPassword Error: {ex.Message}");
             }
         }
     }

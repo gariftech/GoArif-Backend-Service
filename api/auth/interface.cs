@@ -13,5 +13,5 @@ public interface IAuthService
     Task<string> CheckMail(string email);
 
     Task<Object> RequestOtpEmail(string id);
-
+    Task<object> Recaptcha(string token);
 }
