@@ -20,8 +20,8 @@ namespace SendingEmail
         {
             try
             {
-                var email = "no-reply@coderchamps.co.id";
-                var password = "hgzzbtjqvbbovjvr";
+                var email = "no-reply@goarif.co";
+                var password = "cwzmdjrlczgbvrbj";
 
                 var client = new SmtpClient("smtp.gmail.com", 587)
                 {
