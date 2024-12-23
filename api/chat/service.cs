@@ -62,7 +62,7 @@ namespace RepositoryPattern.Services.ChatService
                 };
                 // await dataUser.InsertOneAsync(ChatData);
 
-                var apiKey = "AIzaSyDZkNG6iHdEsmhnC3XrvdJI01WQJhNeVsw";
+                var apiKey = "AIzaSyDjO7GLq9crBdve2pfAxvJoscTkxflpL8k";
                 var requestUri = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={apiKey}";
                 var payload = new
                 {
