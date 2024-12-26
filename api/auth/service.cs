@@ -458,5 +458,24 @@ namespace RepositoryPattern.Services.AuthService
                 throw new CustomException(400, "Message", $"ForgotPassword Error: {ex.Message}");
             }
         }
+
+
+        public async Task<object> Profile(string UID)
+        {
+            try
+            {
+                var user = await dataUser.Find(u => u.Id == UID).FirstOrDefaultAsync();
+                if (user == null)
+                {
+                    throw new CustomException(400, "Email", "Email not ditemukan");
+                }
+                return new { code = 200, message = "Berhasil", data = user };
+            }
+            catch (CustomException ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

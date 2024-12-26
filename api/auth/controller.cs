@@ -171,7 +171,7 @@ namespace Goarif.Server.Controllers
         [Authorize]
         [HttpGet]
         [Route("verifySessions")]
-        public object Aktifasi()
+        public async Task<object>  Profiles()
         {
             try
             {
@@ -180,7 +180,10 @@ namespace Goarif.Server.Controllers
                 {
                     return new CustomException(400, "Error", "Unauthorized");
                 }
-                return new { code = 200, message = "not expired" };
+                string accessToken = HttpContext.Request.Headers["Authorization"];
+                string idUser = await _ConvertJwt.ConvertString(accessToken);
+                var data = await _IAuthService.Profile(idUser);
+                return Ok(data);
             }
             catch (CustomException ex)
             {

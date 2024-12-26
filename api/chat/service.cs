@@ -120,6 +120,68 @@ namespace RepositoryPattern.Services.ChatService
             }
         }
 
+        public async Task<object> Translate(string text, string bahasa)
+        {
+            try
+            {
+                var apiKey = "AIzaSyDjO7GLq9crBdve2pfAxvJoscTkxflpL8k";
+                var requestUri = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={apiKey}";
+                var payload = new
+                {
+                    contents = new[]
+                    {
+                        new
+                        {
+                            parts = new[]
+                            {
+                                new { text = "translate ke bahasa" + bahasa + "berikut kontennya" + text + "kirim hasilnya hanya text tanpa tanda symbol dan lain lain dan tanpa \n"}
+                            }
+                        }
+                    }
+                };
+
+                var jsonPayload = Newtonsoft.Json.JsonConvert.SerializeObject(payload);
+
+                var client = new HttpClient();
+                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                try
+                {
+                    var response = await client.PostAsync(requestUri, content);
+
+                    response.EnsureSuccessStatusCode();
+
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    var geminiResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<GeminiResponse>(responseContent);
+                    var data = geminiResponse?.Candidates[0].Content.Parts[0].Text;
+
+                    var GeminiChatData = new Chat()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        TextChat = data,
+                        // IdRoom = item.IdRoom,
+                        IdUser = "Gemini",
+                        IsActive = true,
+                        IsVerification = false,
+                        CreatedAt = DateTime.Now
+                    };
+                    // await dataUser.InsertOneAsync(GeminiChatData);
+                    return new { code = 200, GeminiChatData};
+
+
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+            }
+            catch (CustomException)
+            {
+                throw;
+            }
+        }
+
         public async Task<object> Put(string id, CreateChatDto item)
         {
             try

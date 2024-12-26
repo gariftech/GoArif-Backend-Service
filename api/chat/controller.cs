@@ -82,6 +82,22 @@ namespace goarif.Server.Controllers
             }
         }
 
+        [HttpGet("{id}/{bahasa}")]
+        public async Task<object> Translate([FromRoute]string id, string bahasa)
+        {
+            try
+            {
+                var data = await _IChatService.Translate(id, bahasa);
+                return Ok(data);
+            }
+            catch (CustomException ex)
+            {
+                int errorCode = ex.ErrorCode;
+                var errorResponse = new ErrorResponse(errorCode, ex.ErrorHeader, ex.Message);
+                return _errorUtility.HandleError(errorCode, errorResponse);
+            }
+        }
+
         // [Authorize]
         [HttpPut("{id}")]
         public async Task<object> Put([FromRoute] string id, [FromBody] CreateChatDto item)

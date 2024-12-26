@@ -14,4 +14,6 @@ public interface IAuthService
 
     Task<Object> RequestOtpEmail(string id);
     Task<object> Recaptcha(string token);
+
+    Task<object> Profile(string UID);
 }

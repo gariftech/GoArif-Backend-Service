@@ -8,4 +8,6 @@ public interface IChatService
     Task<Object> Post(CreateChatDto items, string idUser);
     Task<Object> Put(string id, CreateChatDto items);
     Task<Object> Delete(string id);
+    Task<Object> Translate(string id, string bahasa);
+
 }
