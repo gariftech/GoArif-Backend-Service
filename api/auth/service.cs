@@ -240,7 +240,7 @@ namespace RepositoryPattern.Services.AuthService
         }
 
 
-        public async Task<object> Aktifasi(string id)
+        public async Task<string> Aktifasi(string id)
         {
             try
             {
@@ -249,15 +249,79 @@ namespace RepositoryPattern.Services.AuthService
                 {
                     throw new CustomException(400, "Error", "Data not found");
                 }
+
                 roleData.IsVerification = true;
                 await dataUser.ReplaceOneAsync(x => x.Id == id, roleData);
-                return new { code = 200, Message = "Email berhasil di verifikasi" };
+
+                // Return HTML as response
+                string htmlContent = @"
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Activation Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+        .logo {
+            width: 150px;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            color: #555;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <img src='https://app.goarif.co/images/logo.png' alt='Logo' class='logo'>
+        <h1>Activation Successful</h1>
+        <p>Your email has been successfully verified. Thank you for activating your account!</p>
+        <a href='https://app.goarif.co/auth/login' class='button'>Go to App</a>
+    </div>
+</body>
+</html>";
+
+                // Return an HTML page for successful activation
+               return htmlContent;
             }
             catch (CustomException ex)
             {
                 throw;
             }
         }
+
 
         public async Task<object> Recaptcha(string token)
         {

@@ -3,7 +3,7 @@ public interface IAuthService
 {
     Task<Object> LoginAsync(LoginDto model);
     Task<Object> RegisterAsync(RegisterDto model);
-    Task<Object> Aktifasi(string id);
+    Task<string> Aktifasi(string id);
     Task<Object> UpdatePassword(string id, ChangeUserPasswordDto model);
     Task<string> ForgotPasswordAsync(UpdateUserAuthDto model);
     Task<Object> UpdatePin(string id, UpdatePinDto model);

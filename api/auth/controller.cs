@@ -153,7 +153,12 @@ namespace Goarif.Server.Controllers
             try
             {
                 var dataList = await _IAuthService.Aktifasi(UID);
-                return Ok(dataList);
+                 return new ContentResult
+                {
+                    Content = dataList,
+                    ContentType = "text/html",
+                    StatusCode = 200
+                };
             }
             catch (CustomException ex)
             {
