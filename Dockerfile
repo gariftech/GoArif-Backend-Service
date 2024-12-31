@@ -20,7 +20,7 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 # Expose the application port
-EXPOSE 4000
+EXPOSE 8080
 
 # Define the entry point for your application
 ENTRYPOINT ["dotnet", "Goarif-Main.dll"]
