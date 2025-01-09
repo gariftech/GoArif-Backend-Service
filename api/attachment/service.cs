@@ -68,19 +68,19 @@ namespace RepositoryPattern.Services.AttachmentService
                     var options = new GridFSUploadOptions
                     {
                         Metadata = new BsonDocument
-                {
-                    { "FileName", file.FileName },
-                    { "ContentType", file.ContentType },
-                    { "UploadedBy", idUser },
-                    { "UploadedAt", DateTime.UtcNow }
-                }
+                        {
+                            { "FileName", file.FileName },
+                            { "ContentType", file.ContentType },
+                            { "UploadedBy", idUser },
+                            { "UploadedAt", DateTime.UtcNow }
+                        }
                     };
 
                     fileId = await gridFSBucket.UploadFromStreamAsync(file.FileName, stream, options);
                 }
                 return new Riwayat
                 {
-                    File = [$"https://api.goarif.co/api/v1/Attachment/Download/{fileId}"],
+                    File = [$"https://api.goarif.co/api/v1/Attachment/Download/{fileId}"]
                 };
             }
             catch (CustomException ex)

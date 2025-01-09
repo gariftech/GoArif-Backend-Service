@@ -22,9 +22,9 @@ namespace RepositoryPattern.Services.RiwayatService
             {
                 // Sort by 'CreatedAt' field in descending order (latest first)
                 var items = await dataUser
-            .Find(_ => _.UserId == id && _.IsActive == true)  // Filter by 'IsActive' field
-            .SortByDescending(item => item.CreatedAt)  // Sort by 'CreatedAt' in descending order
-            .ToListAsync();
+                    .Find(_ => _.UserId == id && _.IsActive == true)  // Filter by 'IsActive' field
+                    .SortByDescending(item => item.CreatedAt)  // Sort by 'CreatedAt' in descending order
+                    .ToListAsync();
 
                 return new { code = 200, data = items, message = "Data retrieved successfully" };
             }
@@ -51,6 +51,7 @@ namespace RepositoryPattern.Services.RiwayatService
                     File = item.File,
                     Result = item.Result,
                     Prompt = item.Prompt,
+                    Size = item.Size,
                     UserId = idUser,
                     IsActive = true,
                     CreatedAt = DateTime.Now,

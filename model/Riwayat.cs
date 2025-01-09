@@ -17,6 +17,8 @@ namespace Goarif.Shared.Models
         public List<string>? File { get; set; }
         [BsonElement("Type")]
         public string? Type { get; set; }
+        [BsonElement("Size")]
+        public long? Size { get; set; }
         [BsonElement("UserId")]
         public string? UserId { get; set; }
     }

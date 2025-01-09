@@ -5,5 +5,7 @@ public class CreateRiwayatDto
     public List<string>? File { get; set; }
     public string? Prompt { get; set; }
     public string? Result { get; set; }
+    public long? Size { get; set; }
+
 
 }
