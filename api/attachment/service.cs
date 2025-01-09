@@ -80,7 +80,7 @@ namespace RepositoryPattern.Services.AttachmentService
                 }
                 return new Riwayat
                 {
-                    File = [$"https://app.goarif.co/api/v1/Attachment/Download/{fileId}"],
+                    File = [$"https://api.goarif.co/api/v1/Attachment/Download/{fileId}"],
                 };
             }
             catch (CustomException ex)

@@ -75,28 +75,31 @@ namespace RepositoryPattern.Services.TranscribeService
                 var audioData = memoryStream.ToArray();
                 object Result = await ConvertAudioToTextAsync(audioData, languange);
 
+
+                Riwayat resultUpoad = await _IAttachmentService.Upload(file, idUser);
+
                 var uploadedFile = new UploadDocument
                 {
                     FileName = file.FileName,
                     ContentType = file.ContentType,
-                    Result = Result // Store the text result
+                    Result = Result, // Store the text result,
+                    File = resultUpoad?.File
                 };
 
-                Riwayat resultUpoad = await _IAttachmentService.Upload(file, idUser);
-
-                var RiwayatData = new Riwayat()
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Title = file.FileName,
-                    Type = "Transcribe File",
-                    File = resultUpoad?.File,
-                    Result = Result.ToString(),
-                    Prompt = resultUpoad?.Prompt,
-                    UserId = idUser,
-                    CreatedAt = DateTime.Now,
-                    IsActive = true,
-                };
-                await _riwayat.InsertOneAsync(RiwayatData);
+                // var RiwayatData = new Riwayat()
+                // {
+                //     Id = Guid.NewGuid().ToString(),
+                //     Title = file.FileName,
+                //     Type = "Transcribe",
+                //     File = resultUpoad?.File,
+                //     Result = Result.ToString(),
+                //     Prompt = resultUpoad?.Prompt,
+                //     UserId = idUser,
+                //     CreatedAt = DateTime.Now,
+                //     IsActive = true,
+                // };
+                // await _riwayat.InsertOneAsync(RiwayatData);
+                
                 return uploadedFile;
             }
         }

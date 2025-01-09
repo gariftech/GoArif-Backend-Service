@@ -21,6 +21,7 @@ namespace Goarif.Shared.Models
         public string FileName { get; set; }
         public string ContentType { get; set; }
         public object Result { get; set; }
+        public object File {get; set; }
         public byte[] Data { get; set; }
 
     }

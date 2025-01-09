@@ -305,10 +305,10 @@ namespace RepositoryPattern.Services.AuthService
 </head>
 <body>
     <div class='container'>
-        <img src='https://app.goarif.co/images/logo.png' alt='Logo' class='logo'>
+        <img src='https://api.goarif.co/images/logo.png' alt='Logo' class='logo'>
         <h1>Activation Successful</h1>
         <p>Your email has been successfully verified. Thank you for activating your account!</p>
-        <a href='https://app.goarif.co/auth/login' class='button'>Go to App</a>
+        <a href='https://api.goarif.co/auth/login' class='button'>Go to App</a>
     </div>
 </body>
 </html>";
