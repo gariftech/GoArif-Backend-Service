@@ -21,5 +21,7 @@ namespace Goarif.Shared.Models
         public long? Size { get; set; }
         [BsonElement("UserId")]
         public string? UserId { get; set; }
+        [BsonElement("ProjectId")]
+        public string? ProjectId { get; set; }
     }
 }

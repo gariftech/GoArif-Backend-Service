@@ -53,6 +53,7 @@ namespace RepositoryPattern.Services.RiwayatService
                     Prompt = item.Prompt,
                     Size = item.Size,
                     UserId = idUser,
+                    ProjectId = item.IdProject,
                     IsActive = true,
                     CreatedAt = DateTime.Now,
                 };
