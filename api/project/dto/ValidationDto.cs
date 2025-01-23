@@ -1,8 +1,8 @@
 using Microsoft.IdentityModel.Tokens;
 
-public class ValidationProjectDto
+public class ValidationTranscribeDto
 {
-    public List<object> ValidateCreateInput(CreateProjectDto items)
+    public List<object> ValidateCreateInput(CreateTranscribeDto items)
     {
         var errors = new List<object>();
 

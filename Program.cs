@@ -16,6 +16,7 @@ using RepositoryPattern.Services.PromptService;
 using Microsoft.AspNetCore.Http.Features;
 using RepositoryPattern.Services.RiwayatService;
 using RepositoryPattern.Services.ChatService;
+using RepositoryPattern.Services.ProjectService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,8 @@ builder.Services.AddScoped<ITranscribeService, TranscribeService>();
 builder.Services.AddScoped<IPromptService, PromptService>();
 builder.Services.AddScoped<IRiwayatService, RiwayatService>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+
 
 
 
