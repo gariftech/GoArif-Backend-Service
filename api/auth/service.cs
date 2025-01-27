@@ -42,20 +42,20 @@ namespace RepositoryPattern.Services.AuthService
                 var user = await dataUser.Find(u => u.Email == login.Email).FirstOrDefaultAsync();
                 if (user == null)
                 {
-                    throw new CustomException(400, "Email", "Email tidak ditemukan");
+                    throw new CustomException(400, "Email", "Email not found");
                 }
                 bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(login.Password, user.Password);
                 if (!isPasswordCorrect)
                 {
-                    throw new CustomException(400, "Password", "Password Salah");
+                    throw new CustomException(400, "Password", "Wrong Password");
                 }
                 if (user.IsActive == false)
                 {
-                    throw new CustomException(400, "Message", "Akun anda tidak perbolehkan akses");
+                    throw new CustomException(400, "Message", "Your account is not allowed access.");
                 }
                 if (user.IsVerification == false)
                 {
-                    throw new CustomException(400, "Message", "Akun anda belum aktif, silahkan aktifasi melalui link kami kirimkan di email anda");
+                    throw new CustomException(400, "Message", "Your account is not active yet. Please activate it using the link we sent to your email.");
                 }
 
                 var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
@@ -80,7 +80,7 @@ namespace RepositoryPattern.Services.AuthService
 
                 if (user != null)
                 {
-                    throw new CustomException(400, "Email", "Email Sudah digunakan");
+                    throw new CustomException(400, "Email", "Email Used");
                 }
 
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(data.Password);
@@ -131,20 +131,20 @@ namespace RepositoryPattern.Services.AuthService
                 var roleData = await dataUser.Find(x => x.Id == id).FirstOrDefaultAsync();
                 if (roleData == null)
                 {
-                    throw new CustomException(400, "Error", "Data tidak ada");
+                    throw new CustomException(400, "Error", "No Data");
                 }
                 if (roleData.Password != item.currentPassword)
                 {
-                    throw new CustomException(400, "Error", "Data tidak ada");
+                    throw new CustomException(400, "Error", "No Data");
                 }
                 if (item.newPassword.Length < 8)
                 {
-                    throw new CustomException(400, "Password", "Password harus 8 karakter");
+                    throw new CustomException(400, "Password", "Password must 8 character");
                 }
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(item.newPassword);
                 roleData.Password = hashedPassword;
                 await dataUser.ReplaceOneAsync(x => x.Id == id, roleData);
-                return new { code = 200, Message = "Update Password Berhasil" };
+                return new { code = 200, Message = "Update Password Success" };
             }
             catch (CustomException ex)
             {
@@ -160,16 +160,16 @@ namespace RepositoryPattern.Services.AuthService
                 var roleData = await dataUser.Find(x => x.Id == id).FirstOrDefaultAsync();
                 if (roleData == null)
                 {
-                    throw new CustomException(400, "Error", "Data tidak ada");
+                    throw new CustomException(400, "Error", "Data not found");
                 }
                 if (item.Pin.Length < 6)
                 {
-                    throw new CustomException(400, "Password", "Pin harus 6 karakter");
+                    throw new CustomException(400, "Password", "Pin must 6 character");
                 }
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(item.Pin);
                 roleData.Pin = hashedPassword;
                 await dataUser.ReplaceOneAsync(x => x.Id == id, roleData);
-                return new { code = 200, Message = "Update Pin Berhasil" };
+                return new { code = 200, Message = "Update Pin Success" };
             }
             catch (CustomException ex)
             {
@@ -200,7 +200,7 @@ namespace RepositoryPattern.Services.AuthService
                 var sending = _emailService.SendEmailAsync(emailForm);
                 roleData.Otp = otp;
                 await dataUser.ReplaceOneAsync(x => x.Email == id, roleData);
-                return new { code = 200, Message = "Berhasil" };
+                return new { code = 200, Message = "Success" };
             }
             catch (CustomException ex)
             {
@@ -220,7 +220,7 @@ namespace RepositoryPattern.Services.AuthService
                 }
                 if (roleData.Otp != otp.Otp)
                 {
-                    throw new CustomException(400, "Error", "Otp anda salah");
+                    throw new CustomException(400, "Error", "Wrong Otp");
                 }
                 var data = new LoginDto();
                 {
@@ -230,7 +230,7 @@ namespace RepositoryPattern.Services.AuthService
                 var jwtService = new JwtService(configuration);
                 string userId = roleData.Id;
                 string token = jwtService.GenerateJwtToken(userId);
-                return new { code = 200, message = "Berhasil", accessToken = token };
+                return new { code = 200, message = "Success", accessToken = token };
             }
             catch (CustomException ex)
             {
@@ -308,7 +308,7 @@ namespace RepositoryPattern.Services.AuthService
         <img src='https://api.goarif.co/images/logo.png' alt='Logo' class='logo'>
         <h1>Activation Successful</h1>
         <p>Your email has been successfully verified. Thank you for activating your account!</p>
-        <a href='https://api.goarif.co/auth/login' class='button'>Go to App</a>
+        <a href='https://app.goarif.co/auth/login' class='button'>Go to App</a>
     </div>
 </body>
 </html>";
@@ -392,12 +392,12 @@ namespace RepositoryPattern.Services.AuthService
                 var user = await dataUser.Find(u => u.Id == id).FirstOrDefaultAsync();
                 if (user == null)
                 {
-                    throw new CustomException(400, "Email", "Email tidak ditemukan");
+                    throw new CustomException(400, "Email", "Email not found");
                 }
                 bool isPinCorrect = BCrypt.Net.BCrypt.Verify(pin.Pin, user.Pin);
                 if (!isPinCorrect)
                 {
-                    throw new CustomException(400, "Pin", "Pin Salah");
+                    throw new CustomException(400, "Pin", "Wrong PIN");
                 }
                 string idAsString = user.Id.ToString();
                 return new { code = 200, Message = "Berhasil" };
@@ -467,7 +467,7 @@ namespace RepositoryPattern.Services.AuthService
                 var user = await dataUser.Find(u => u.Id == UID).FirstOrDefaultAsync();
                 if (user == null)
                 {
-                    throw new CustomException(400, "Email", "Email not ditemukan");
+                    throw new CustomException(400, "Email", "Email not found");
                 }
                 return new { code = 200, message = "Berhasil", data = user };
             }
